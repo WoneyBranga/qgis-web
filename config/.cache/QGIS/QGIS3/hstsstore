@@ -1,0 +1,4 @@
+[StrictTransportSecurity]
+Policies\6769746875622e636f6d=@ByteArray(\0\0\x1\xa5\xf7Y\x89\xd4\x1)
+Policies\7261772e67697468756275736572636f6e74656e742e636f6d=@ByteArray(\0\0\x1\xa5\xf7Y\x8ar\0)
+Policies\74696c652e6f70656e7374726565746d61702e6f7267=@ByteArray(\0\0\x1\xa5\xf7\x62L\x1\x1)
