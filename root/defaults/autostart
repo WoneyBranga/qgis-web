@@ -1,2 +1,9 @@
+mkdir -p root/defaults
+
+cat > root/defaults/autostart <<'EOF'
 #!/bin/bash
+set -e
 exec qgis
+EOF
+
+chmod +x root/defaults/autostart

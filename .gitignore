@@ -1,0 +1,32 @@
+# Runtime LinuxServer/Selkies
+config/*
+!config/.gitkeep
+
+# Dados e projetos locais
+dados/*
+!dados/.gitkeep
+
+projetos/*
+!projetos/.gitkeep
+!projetos/uploads/
+projetos/uploads/*
+!projetos/uploads/.gitkeep
+
+# Env local
+.env
+.env.*
+!.env.example
+
+# Docker local
+docker-compose.override.yml
+
+# Logs/temp
+*.log
+tmp/
+.cache/
+
+# IDE/SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
