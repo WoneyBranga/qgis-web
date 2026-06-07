@@ -4,13 +4,13 @@ LABEL maintainer="engenharia"
 LABEL app="qgis-web"
 LABEL source="internal-build"
 
-ENV TITLE="QGIS Web"
-ENV START_DOCKER=false
-ENV DISABLE_SUDO=true
-ENV DISABLE_TERMINALS=true
-ENV HARDEN_DESKTOP=true
-ENV HARDEN_OPENBOX=true
-ENV RESTART_APP=true
+ENV TITLE="QGIS Web" \
+    START_DOCKER=false \
+    DISABLE_SUDO=true \
+    DISABLE_TERMINALS=true \
+    HARDEN_DESKTOP=true \
+    HARDEN_OPENBOX=true \
+    RESTART_APP=true
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
@@ -24,8 +24,6 @@ RUN apt-get update && \
         fonts-dejavu \
         fonts-liberation \
         locales && \
-    \
-    echo "Removendo componentes desnecessários para o QGIS" && \
     apt-get purge -y --autoremove \
         docker-ce \
         docker-ce-cli \
@@ -36,13 +34,13 @@ RUN apt-get update && \
         xterm \
         stterm \
         openssh-client || true && \
-    \
+    rm -f \
+        /etc/ssl/private/ssl-cert-snakeoil.key \
+        /etc/ssl/certs/ssl-cert-snakeoil.pem && \
     apt-get autoclean && \
     rm -rf \
         /var/lib/apt/lists/* \
         /tmp/* \
-        /var/tmp/* \
-        /config/.cache
+        /var/tmp/*
 
 COPY root/ /
-
